@@ -113,3 +113,25 @@ body {
     .home-hero h1 { font-size: 1.5rem; }
     .hero-images img { width: 100%; max-width: 100%; height: 250px; }
 }
+/* תפריט ניווט מותאם לנייד */
+.navbar {
+    display: flex;
+    flex-wrap: wrap; /* מאפשר לתפריט לרדת שורה במידת הצורך */
+    justify-content: center;
+    padding: 10px;
+    background: #1e293b;
+}
+
+.nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    gap: 10px; /* צמצום הרווחים כדי שהכל ייכנס בשורה אחת או שתיים */
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    font-size: 0.8rem; /* הקטנת הגופן כדי שייכנס בתפריט */
+    padding: 5px;
+}
