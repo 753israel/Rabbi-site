@@ -1,180 +1,4 @@
 /* עיצוב כללי */
-body { 
-    background-color: #0f172a; 
-    color: white; 
-    font-family: sans-serif; 
-    margin: 0; 
-}
-
-/* תפריט ניווט */
-.navbar { 
-    display: flex; 
-    justify-content: space-between; 
-    padding: 20px 50px; 
-    background: #1e293b; 
-}
-.nav-links { display: flex; list-style: none; gap: 20px; }
-.nav-links a { color: white; text-decoration: none; }
-
-/* אזור מוזיקה */
-.music-section { text-align: center; margin: 30px 0; }
-
-/* הגלריה הראשית (מכילה הכל) */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 25px;
-    padding: 20px;
-    max-width: 1200px;
-    margin: auto;
-}
-
-/* עיצוב הכרטיס */
-.card {
-    background: #1e293b;
-    border-radius: 12px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    border: 1px solid #334155;
-    transition: transform 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-/* אזור המדיה (תמונה או וידאו) - מונע חיתוך! */
-.card-media {
-    width: 100%;
-    height: 250px; 
-    background-color: #000; /* רקע שחור לתמונה אם היא לא ממלאת את הכל */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.card-media img, .card-media video {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* שומר על הפרופורציות של התמונה */
-}
-
-/* טקסט */
-.content { 
-    padding: 20px; 
-    text-align: right; 
-}
-.content h3 { margin: 0 0 10px 0; }
-.content p { margin: 0; color: #94a3b8; font-size: 0.9em; }
-
-/* רספונסיביות לנייד */
-@media (max-width: 600px) {
-    .navbar { flex-direction: column; text-align: center; gap: 15px; }
-    .gallery { grid-template-columns: 1fr; }
-}
-/* מבנה ה-Lightbox */
-.lightbox {
-    display: none; /* מוסתר כברירת מחדל */
-    position: fixed;
-    z-index: 9999;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* רקע שחור חצי שקוף */
-    align-items: center; justify-content: center;
-}
-
-.lightbox-content { max-width: 90%; max-height: 90%; border-radius: 8px; }
-
-.close {
-    position: absolute; top: 20px; right: 40px;
-    font-size: 50px; color: white; cursor: pointer;
-}
-
-.clickable { cursor: pointer; transition: 0.3s; }
-.clickable:hover { transform: scale(1.02); }
-
-/* עיצוב הדף הראשי */
-.home-hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 30px;
-    padding-bottom: 50px;
-    text-align: center;
-}
-
-.home-hero h1 { font-size: 3rem; color: white; margin-bottom: 30px; }
-
-.hero-images { display: flex; gap: 30px; justify-content: center; margin-bottom: 30px; }
-
-.hero-images img {
-    width: 350px;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 20px;
-    border: 3px solid #38bdf8;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
-}
-
-.hero-text-box {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 30px;
-    background-color: rgba(30, 41, 59, 0.8);
-    border-radius: 15px;
-    border-right: 5px solid #38bdf8;
-    line-height: 1.8;
-    font-size: 1.1rem;
-    color: #f1f5f9;
-}
-
-.hero-text-box h2 { color: #38bdf8; margin-bottom: 20px; }
-
-/* התאמה למובייל */
-@media (max-width: 800px) {
-    .hero-images { flex-direction: column; gap: 15px; }
-    .hero-images img { width: 280px; height: 280px; }
-}
-/* מיכל מרכזי שקובע רוחב אחיד לכולם */
-.container {
-    max-width: 800px;
-    width: 95%; /* נותן מרווח קטן מהצדדים בנייד */
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-}
-
-/* התמונות יתאימו לרוחב ה-container */
-.hero-images { 
-    display: flex; 
-    gap: 20px; 
-    justify-content: center;
-    width: 100%;
-}
-
-.hero-images img {
-    flex: 1; /* מחלק את הרוחב שווה בשווה */
-    height: 350px;
-    object-fit: cover;
-    border-radius: 20px;
-    border: 3px solid #38bdf8;
-}
-
-/* הטקסט יתאים בדיוק לאותו רוחב */
-.hero-text-box {
-    width: 100%; /* תופס את מלוא הרוחב של ה-container */
-    padding: 30px;
-    background-color: rgba(30, 41, 59, 0.8);
-    border-radius: 15px;
-    border-right: 5px solid #38bdf8;
-    line-height: 1.8;
-    color: #f1f5f9;
-    box-sizing: border-box; /* קריטי - מונע מהפדינג להוציא את התיבה מהרוחב */
-}
-
 body {
     margin: 0;
     padding: 0;
@@ -186,4 +10,106 @@ body {
     background-repeat: no-repeat;
     color: white;
     font-family: sans-serif;
+    min-height: 100vh;
+}
+
+/* מיכל ראשי */
+.container {
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* תפריט ניווט */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background: #1e293b;
+    align-items: center;
+}
+.nav-links { display: flex; list-style: none; gap: 15px; padding: 0; }
+.nav-links a { color: white; text-decoration: none; font-size: 0.9rem; }
+
+/* אזור כותרת ראשי */
+.home-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.home-hero h1 { font-size: 2rem; margin-bottom: 20px; }
+
+/* התאמת תמונות לנייד ולדסקטופ */
+.hero-images {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap; /* מאפשר לתמונות לרדת שורה בנייד */
+}
+
+.hero-images img {
+    width: 100%;
+    max-width: 300px; /* הגבלה לנייד */
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px;
+    border: 3px solid #38bdf8;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* תיבת טקסט */
+.hero-text-box {
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(30, 41, 59, 0.9);
+    border-radius: 15px;
+    border-right: 5px solid #38bdf8;
+    line-height: 1.6;
+    color: #f1f5f9;
+    box-sizing: border-box;
+}
+
+/* גלריה */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background: #1e293b;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #334155;
+}
+
+.card-media {
+    width: 100%;
+    height: 200px;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-media img, .card-media video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* התאמות נוספות למובייל */
+@media (max-width: 600px) {
+    .navbar { flex-direction: column; gap: 10px; }
+    .home-hero h1 { font-size: 1.5rem; }
+    .hero-images img { width: 100%; max-width: 100%; height: 250px; }
 }
