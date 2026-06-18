@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אודות מוסדות יעקב וגיטל</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">מוסדות יעקב וגיטל</div>
+        <div class="menu-toggle" onclick="document.querySelector('.nav-links').classList.toggle('active')">☰</div>
+        <ul class="nav-links">
+            <li><a href="index.html">ראשי</a></li>
+            <li><a href="soldiers.html">פעילות עם חיילי צה"ל</a></li>
+            <li><a href="families.html">פעילות עם משפחות נזקקות</a></li>
+            <li><a href="community.html">פעילות למען הקהילה</a></li>
+            <li><a href="about.html">אודות העמותה</a></li>
+            <li><a href="contact.html">צור קשר</a></li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <div class="about-box">
+            <div class="about-text">
+                <h1>אודות מוסדות יעקב וגיטל</h1>
+                
+                <div class="text-content">
+                    <p>Yakkov and Gittle Institutions was founded fifteen years ago by <strong>Rabbi Moshe Buganim, shlit"a</strong>. Rabbi Buganim was born in Haifa, served in the IDF, and currently resides in Tzfat. As a Lubavitcher chassid, he follows the path of his Rebbe, educating fellow Jewish people and instilling them with Jewish enthusiasm. Rabbi Buganim also tirelessly works to provide financial aid and other help to impoverished families in Israel's North.</p>
+                    
+                    <p>מוסדות "יעקב וגיטל" הוקמו לפני כחמש עשרה שנים על ידי הרב משה בוגנים שליט"א. הרב בוגנים נולד בחיפה, שירת בצה"ל וכיום מתגורר בצפת. כחסיד חב"ד, הוא הולך בדרכו של הרבי, מחנך יהודים ומחדיר בהם התלהבות יהודית. הרב בוגנים פועל ללא לאות כדי לספק סיוע כלכלי ועזרה למשפחות מעוטות יכולת בצפון הארץ.</p>
+                </div>
+
+                <h3>רשימת הפעילויות</h3>
+                <ul class="activities-list">
+                    <li>פעילות בבסיסי צה"ל</li>
+                    <li>ביקורים בבתי חולים</li>
+                    <li>תוכנית ביקורי בית</li>
+                    <li>חלוקת סלי מזון</li>
+                    <li>הפצת תפילין ומבצע תפילין לחיילי צה"ל</li>
+                    <li>חלוקת תחליפי חלב לתינוקות</li>
+                    <li>הבאת שמחה לעם ישראל</li>
+                </ul>
+            </div>
+
+            <div class="about-image">
+                <img src="home/home.jpg" alt="הרב בוגנים" class="clickable">
+            </div>
+        </div>
+    </main>
+
+    <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+        <span class="close-btn">&times;</span>
+        <img id="full-img" src="" alt="מסך מלא">
+    </div>
+
+    <script>
+        // פונקציית Lightbox
+        document.querySelectorAll('.clickable').forEach(img => {
+            img.addEventListener('click', () => {
+                const lightbox = document.getElementById('lightbox');
+                const fullImg = document.getElementById('full-img');
+                fullImg.src = img.src;
+                lightbox.style.display = 'flex';
+            });
+        });
+    </script>
+</body>
+</html>

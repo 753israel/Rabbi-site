@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>יעקב וגיטל - עזרה למשפחות</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <nav class="navbar">
-        <div class="logo">המותג שלי</div>
-        <ul class="nav-links">
+        <div class="logo">מוסדות יעקב וגיטל</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links" id="nav-links">
             <li><a href="soldiers.html">פעילות עם חיילי צה"ל</a></li>
             <li><a href="families.html">פעילות עם משפחות נזקקות</a></li>
             <li><a href="community.html">פעילות למען הקהילה</a></li>
-            <li><a href="#">אודות העמותה</a></li>
-            <li><a href="#">צור קשר</a></li>
+            <li><a href="about.html">אודות העמותה</a></li>
+            <li><a href="contact.html">צור קשר</a></li>
         </ul>
     </nav>
 
@@ -23,24 +24,46 @@
         <source src="music/muc1.mp3" type="audio/mp3">
     </audio>
 
-    <main class="home-hero">
-        <h1>יעקב וגיטל עזרה למשפחות</h1>
-        
-        <div class="container">
-        <div class="hero-images">
-            <img src="home/home.jpg" alt="תמונה 1">
-            <img src="home/rabi.jpg" alt="תמונה 2">
+    <main class="container">
+        <div class="page-hero">
+            <h1>מוסדות יעקב וגיטל</h1>
+            <p>Yakkov & Gittle Institutions</p>
+            <div class="hero-divider"></div>
         </div>
 
-        <div class="hero-text-box">
-            <h2>יעקב וגיטל - עושים טוב בלב ובנשמה</h2>
-            <p>
-                עמותת 'יעקב וגיטל' הוקמה מתוך שליחות עמוקה להפיץ אור, תקווה וסיוע בכל מקום בו אנו פוגשים אדם הזקוק ליד מושטת. העשייה שלנו היא פסיפס חי ומרגש של אהבת ישראל טהורה, שמתפרסת על פני מגוון רחב של תחומים.<br><br>
-                אנו גאים לעמוד לצד חיילי צה"ל הגיבורים, מעניקים להם חיזוק וחיבוק חם שמזכיר להם כמה העם מאחוריהם. הלב שלנו פועם עבור משפחות נזקקות, ואנו פועלים יום-יום כדי להבטיח ששום שולחן לא יישאר ריק – מחלוקת סלי מזון ועד תמיכה מורלית וכלכלית שמאפשרת למשפחות לנשום לרווחה.<br><br>
-                השמחה היא חלק בלתי נפרד מאיתנו; אנו מרימים תהלוכות ל"ג בעומר ססגוניות שמדליקות את האש היהודית בלבבות רבים, ומקיימים פעילות ערכית וחווייתית עם ילדים בבית הכנסת, בונים את דור העתיד מתוך חיבור לשורשים ומסורת. בכל פעולה שלנו, אנחנו לא רק עושים חסד, אנחנו חיים חסד, כי אנחנו מאמינים שמעשה טוב אחד יכול לשנות עולם שלם.
-            </p>
+        <div class="about-box">
+            <div class="about-text">
+                <h2>יעקב וגיטל - עושים טוב בלב ובנשמה</h2>
+                <p>עמותת 'יעקב וגיטל' הוקמה מתוך שליחות עמוקה להפיץ אור, תקווה וסיוע בכל מקום בו אנו פוגשים אדם הזקוק ליד מושטת <strong>בצפת עיר הקודש ת"ו</strong>. העשייה שלנו היא פסיפס חי ומרגש של אהבת ישראל טהורה, שמתפרסת על פני מגוון רחב של תחומים.</p>
+                <p>אנו גאים לעמוד לצד חיילי צה"ל הגיבורים, מעניקים להם חיזוק וחיבוק חם שמזכיר להם כמה העם מאחוריהם. הלב שלנו פועם עבור משפחות נזקקות, ואנו פועלים יום-יום כדי להבטיח ששום שולחן לא יישאר ריק.</p>
+                <p>השמחה היא חלק בלתי נפרד מאיתנו; אנו מרימים תהלוכות ל"ג בעומר ססגוניות שמדליקות את האש היהודית, ומקיימים פעילות ערכית וחווייתית עם ילדים. בכל פעולה שלנו, אנחנו חיים חסד, כי אנחנו מאמינים שמעשה טוב אחד יכול לשנות עולם שלם.</p>
+            </div>
+
+            <div class="about-image">
+                <img src="home/home.jpg" alt="תמונה 1" class="clickable">
+                <img src="home/rabi.jpg" alt="תמונה 2" class="clickable" style="margin-top: 20px;">
+            </div>
         </div>
     </main>
 
+    <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
+        <span class="close-btn">&times;</span>
+        <img id="full-img" src="" alt="מסך מלא">
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-links').classList.toggle('active');
+        }
+
+        document.querySelectorAll('.clickable').forEach(img => {
+            img.addEventListener('click', () => {
+                const lightbox = document.getElementById('lightbox');
+                const fullImg = document.getElementById('full-img');
+                fullImg.src = img.src;
+                lightbox.style.display = 'flex';
+            });
+        });
+    </script>
 </body>
 </html>
