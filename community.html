@@ -10,7 +10,7 @@
 
 <body>
 
-    <nav class="navbar">
+     <nav class="navbar">
         <div class="logo">מוסדות יעקב וגיטל</div>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <ul class="nav-links" id="nav-links">
@@ -328,20 +328,7 @@
         });
     </script>
     <script>
-        // פונקציית פתיחה/סגירה של התפריט
-        function toggleMenu() {
-            const navLinks = document.getElementById('nav-links');
-            navLinks.classList.toggle('active');
-        }
-
-        // סגירת התפריט אוטומטית כשלוחצים על קישור
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('nav-links').classList.remove('active');
-            });
-        });
-
-        // פונקציית Lightbox (שכבר עובדת לך)
+        // פונקציית Lightbox
         document.querySelectorAll('.clickable').forEach(img => {
             img.addEventListener('click', () => {
                 const lightbox = document.getElementById('lightbox');
@@ -351,6 +338,30 @@
             });
         });
     </script>
+   <script>
+    // פונקציית פתיחה/סגירה של התפריט
+    function toggleMenu() {
+        const navLinks = document.getElementById('nav-links');
+        navLinks.classList.toggle('active');
+    }
+
+    // סגירת התפריט אוטומטית כשלוחצים על קישור
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            document.getElementById('nav-links').classList.remove('active');
+        });
+    });
+
+    // פונקציית Lightbox
+    document.querySelectorAll('.clickable').forEach(img => {
+        img.addEventListener('click', () => {
+            const lightbox = document.getElementById('lightbox');
+            const fullImg = document.getElementById('full-img');
+            fullImg.src = img.src;
+            lightbox.style.display = 'flex';
+        });
+    });
+</script>
 
 </body>
 
