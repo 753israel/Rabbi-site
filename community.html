@@ -11,8 +11,9 @@
 <body>
 
     <nav class="navbar">
-        <div class="logo">המותג שלי</div>
-        <ul class="nav-links">
+        <div class="logo">מוסדות יעקב וגיטל</div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul class="nav-links" id="nav-links">
             <li><a href="index.html">ראשי</a></li>
             <li><a href="soldiers.html">פעילות עם חיילי צה"ל</a></li>
             <li><a href="families.html">פעילות עם משפחות נזקקות</a></li>
@@ -303,6 +304,7 @@
         <span class="close">&times;</span>
         <img id="full-img" src="" alt="מסך מלא">
     </div>
+    
     <script>
         const lightbox = document.getElementById('lightbox');
         const fullImg = document.getElementById('full-img');
@@ -323,6 +325,30 @@
         // סגירה בלחיצה מחוץ לתמונה
         lightbox.addEventListener('click', (e) => {
             if (e.target !== fullImg) lightbox.style.display = 'none';
+        });
+    </script>
+    <script>
+        // פונקציית פתיחה/סגירה של התפריט
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        // סגירת התפריט אוטומטית כשלוחצים על קישור
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-links').classList.remove('active');
+            });
+        });
+
+        // פונקציית Lightbox (שכבר עובדת לך)
+        document.querySelectorAll('.clickable').forEach(img => {
+            img.addEventListener('click', () => {
+                const lightbox = document.getElementById('lightbox');
+                const fullImg = document.getElementById('full-img');
+                fullImg.src = img.src;
+                lightbox.style.display = 'flex';
+            });
         });
     </script>
 
