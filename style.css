@@ -387,4 +387,24 @@ body {
     gap: 40px; /* הוספנו רווח גדול יותר בין הכרטיסים */
     padding: 0;
 }
+/* מניעת גלילה אופקית ודחיקת תוכן */
+html, body {
+    overflow-x: hidden; /* מונע מהאתר לזוז לצדדים */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
 
+/* הבטחה שכל מיכל תוכן יתאים למסך */
+.container, .about-box, .page-hero, .navbar {
+    box-sizing: border-box; /* מונע מה-padding להוסיף רוחב לתיבה */
+    max-width: 100%;       /* לא נותן לשום אלמנט להיות רחב יותר מהמסך */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* תיקון ספציפי לתפריט בנייד */
+.nav-links {
+    max-width: 100% !important;
+    padding: 0 !important;
+}
