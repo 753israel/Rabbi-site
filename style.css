@@ -387,23 +387,4 @@ body {
     gap: 40px; /* הוספנו רווח גדול יותר בין הכרטיסים */
     padding: 0;
 }
-/* הגדרות בסיסיות */
-body { margin: 0; font-family: sans-serif; background: #0f172a; color: white; }
 
-/* הגבלת רוחב */
-.container, .about-box, .page-hero { max-width: 900px; width: 92%; margin: 30px auto; }
-
-/* ניווט */
-.navbar { display: flex; justify-content: space-between; padding: 20px 5%; align-items: center; background: #1e293b; }
-.nav-links { display: flex; list-style: none; gap: 20px; }
-.menu-toggle { display: none; font-size: 30px; cursor: pointer; }
-
-/* רק בנייד - המבורגר */
-@media (max-width: 768px) {
-    .menu-toggle { display: block; }
-    .nav-links { 
-        display: none; flex-direction: column; width: 100%; position: absolute; 
-        top: 70px; right: 0; background: #1e293b; text-align: center; padding: 20px 0;
-    }
-    .nav-links.active { display: flex; }
-}
