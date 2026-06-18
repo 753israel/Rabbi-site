@@ -178,7 +178,22 @@ body {
 }
 
 .about-text { flex: 2; }
-.about-image { flex: 1; min-width: 300px; }
+.about-image { 
+    flex: 2; 
+    min-width: 150px; 
+    margin-top: 5px; /* הוספתי px, כי ב-CSS חייבים יחידת מידה */
+    
+    /* התיקון בשביל הרווח */
+    display: flex;         /* הופך את הדיב למכולה של התמונות */
+    flex-direction: column; /* מסדר את התמונות אחת מתחת לשנייה (אם זה מה שאתה רוצה) */
+    gap: 20px;             /* זה הרווח המדויק שיהיה בין התמונות */
+}
+
+/* כדי שהתמונות ייראו טוב בתוך הרווח הזה */
+.about-image img {
+    width: 100%;
+    display: block;
+}
 
 .about-image img {
     width: 100%;
@@ -233,14 +248,13 @@ body {
     overflow: hidden;
 }
 
+/* הגדרה ודאית לתמונות בתוך כרטיסים */
 .card-media img {
     width: 100%;
-    height: 100%;
-    /* השינוי כאן: */
-    object-fit: contain; /* מראה את כל התמונה בלי לחתוך כלום */
-    background-color: #1e293b; /* צבע רקע מאחורי תמונות שלא תופסות הכל */
+    height: 250px;
+    object-fit: cover; /* זה ימלא את המקום בצורה יפה בלי לעוות */
+    display: block;
 }
-
 /* אפקט זום קל כשעוברים עם העכבר */
 .card:hover .card-media img {
     transform: scale(1.05);
@@ -381,18 +395,22 @@ body {
 }
 
 /* סידור הגלריה */
+/* מבנה הגלריה המעודכן - מותאם למובייל */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 40px; /* הוספנו רווח גדול יותר בין הכרטיסים */
-    padding: 0;
+    /* במקום 350px, נשתמש ב-100% כדי שזה יתאים למסכים קטנים */
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    padding: 10px;
+    max-width: 900px;
+    margin: 0 auto;
 }
-/* מניעת גלילה אופקית ודחיקת תוכן */
-html, body {
-    overflow-x: hidden; /* מונע מהאתר לזוז לצדדים */
-    width: 100%;
-    margin: 0;
-    padding: 0;
+
+/* בטאבלטים ומחשבים, נחזיר את ה-Grid ל-2 או 3 עמודות */
+@media (min-width: 600px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
 }
 
 /* הבטחה שכל מיכל תוכן יתאים למסך */
@@ -411,4 +429,16 @@ html, body {
 html, body {
     max-width: 100%;
     overflow-x: hidden; /* זה מה שמונע מהמסך "לרקוד" ימינה ושמאלה */
+}
+/* הגדרה גלובלית לכל התמונות באתר */
+img {
+    max-width: 100%;    /* התמונה לעולם לא תהיה רחבה יותר מהמיכל שלה */
+    height: auto;       /* שומר על הפרופורציות של התמונה */
+    display: block;     /* מונע רווחים מיותרים מתחת לתמונה */
+}
+
+/* הגדרה ספציפית לתיבות תוכן (כדי למנוע זליגה) */
+.about-image, .card-media, .project-image {
+    width: 100%;
+    overflow: hidden;   /* קריטי: מה שחורג מהתיבה - לא ייראה */
 }
