@@ -379,17 +379,7 @@ body {
 }
 
 
-/* הגבלת רוחב האתר ל-900 פיקסלים - ייתן מראה מהודק ומקצועי */
-.container, 
-.project-box, 
-.about-box, 
-.page-hero, 
-.page-header, 
-.gallery {
-    max-width: 900px;  /* זה הופך את האתר לצר וקריא יותר */
-    width: 92%;        /* מרווח קל בצדדים בנייד */
-    margin: 30px auto; /* 30px מרווח בין האלמנטים, auto למרכוז */
-}
+
 
 /* מרווח פנימי בתוך הכרטיסים */
 .project-box, .card {
@@ -473,10 +463,9 @@ img {
 }
 
 
-/* --- תיקון מלא לדף צור קשר בנייד (כמו דף אודות) --- */
+/* --- תיקון מלא לדף צור קשר בנייד --- */
 @media (max-width: 768px) {
 
-    /* מיישר את כל הכרטיסים */
     .project-box {
         flex-direction: column !important;
         align-items: center !important;
@@ -490,13 +479,11 @@ img {
         border-bottom: 4px solid var(--primary) !important;
     }
 
-    /* טקסט */
     .project-text {
         width: 100% !important;
         text-align: center !important;
     }
 
-    /* תמונות */
     .project-image {
         width: 100% !important;
         min-width: unset !important;
@@ -510,7 +497,6 @@ img {
         border-radius: 15px !important;
     }
 
-    /* רשימות */
     .activities-list {
         columns: 1 !important;
         width: 100% !important;
@@ -518,7 +504,6 @@ img {
         text-align: right !important;
     }
 
-    /* כותרת הדף */
     .page-hero {
         padding: 30px 15px !important;
         margin: 10px auto !important;
@@ -532,7 +517,6 @@ img {
         font-size: 1rem !important;
     }
 
-    /* תפריט */
     .nav-links {
         width: 100% !important;
         text-align: center !important;
