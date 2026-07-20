@@ -471,3 +471,70 @@ img {
     .main-title { font-size: 1.2rem; }
     .sub-title { font-size: 2rem; }
 }
+
+
+/* --- תיקון מלא לכרטיסים בנייד --- */
+@media (max-width: 768px) {
+
+    /* מיישר את כל הכרטיסים */
+    .project-box {
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        padding: 20px !important;
+        margin: 20px auto !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        gap: 20px !important;
+        border-right: none !important; /* מסיר את הפס הצדדי בנייד */
+        border-bottom: 4px solid var(--primary); /* פס תחתון יפה במקום */
+    }
+
+    /* טקסט */
+    .project-text {
+        width: 100% !important;
+        text-align: center !important;
+    }
+
+    /* תמונות */
+    .project-image {
+        width: 100% !important;
+        min-width: unset !important;
+        margin: 0 auto !important;
+    }
+
+    .project-image img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover !important;
+        border-radius: 15px !important;
+    }
+
+    /* רשימות */
+    .activities-list {
+        columns: 1 !important;
+        width: 100% !important;
+        padding: 0 10px !important;
+        text-align: right !important;
+    }
+
+    /* כותרת הדף */
+    .page-hero {
+        padding: 30px 15px !important;
+        margin: 10px auto !important;
+    }
+
+    .page-hero h1 {
+        font-size: 1.8rem !important;
+    }
+
+    .page-hero p {
+        font-size: 1rem !important;
+    }
+
+    /* תפריט */
+    .nav-links {
+        width: 100% !important;
+        text-align: center !important;
+    }
+}
