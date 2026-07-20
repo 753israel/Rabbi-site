@@ -473,7 +473,7 @@ img {
 }
 
 
-/* --- תיקון מלא לכרטיסים בנייד --- */
+/* --- תיקון מלא לדף צור קשר בנייד (כמו דף אודות) --- */
 @media (max-width: 768px) {
 
     /* מיישר את כל הכרטיסים */
@@ -486,8 +486,8 @@ img {
         width: 100% !important;
         box-sizing: border-box !important;
         gap: 20px !important;
-        border-right: none !important; /* מסיר את הפס הצדדי בנייד */
-        border-bottom: 4px solid var(--primary); /* פס תחתון יפה במקום */
+        border-right: none !important;
+        border-bottom: 4px solid var(--primary) !important;
     }
 
     /* טקסט */
