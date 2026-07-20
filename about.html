@@ -6,11 +6,14 @@
     <title>אודות מוסדות יעקב וגיטל</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+    <!-- ניווט -->
     <nav class="navbar">
         <div class="logo">מוסדות יעקב וגיטל</div>
         <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
         <ul class="nav-links" id="nav-links">
             <li><a href="index.html">ראשי</a></li>
             <li><a href="soldiers.html">פעילות עם חיילי צה"ל</a></li>
@@ -20,17 +23,39 @@
             <li><a href="contact.html">צור קשר</a></li>
         </ul>
     </nav>
-    
 
+    <!-- כותרת יפה -->
+    <div class="page-hero">
+        <h1>אודות מוסדות יעקב וגיטל</h1>
+        <p>מוסדות הפועלים למען חיילי צה"ל, משפחות נזקקות והקהילה בצפון הארץ</p>
+        <div class="hero-divider"></div>
+    </div>
+
+    <!-- תוכן -->
     <main class="container">
+
         <div class="about-box">
+
+            <!-- טקסט -->
             <div class="about-text">
-                <h1>אודות מוסדות יעקב וגיטל</h1>
-                
+                <h2>על הרב משה בוגנים שליט"א</h2>
+
                 <div class="text-content">
-                    <p>Yakkov and Gittle Institutions was founded Twenty-five years ago by <strong>Rabbi Moshe Buganim, shlit"a</strong>. Rabbi Buganim was born in Haifa, served in the IDF, and currently resides in Tzfat. As a Lubavitcher chassid, he follows the path of his Rebbe, educating fellow Jewish people and instilling them with Jewish enthusiasm. Rabbi Buganim also tirelessly works to provide financial aid and other help to impoverished families in Israel's North.</p>
-                    
-                    <p>מוסדות "יעקב וגיטל" הוקמו לפני עשרים וחמש שנים על ידי הרב משה בוגנים שליט"א. הרב בוגנים נולד בחיפה, שירת בצה"ל וכיום מתגורר בצפת. כחסיד חב"ד, הוא הולך בדרכו של הרבי, מחנך יהודים ומחדיר בהם התלהבות יהודית. הרב בוגנים פועל ללא לאות כדי לספק סיוע כלכלי ועזרה למשפחות מעוטות יכולת בצפון הארץ.</p>
+                    <p>
+                        Yakkov and Gittle Institutions was founded Twenty-five years ago by 
+                        <strong>Rabbi Moshe Buganim, shlit"a</strong>. Rabbi Buganim was born in Haifa, 
+                        served in the IDF, and currently resides in Tzfat. As a Lubavitcher chassid, 
+                        he follows the path of his Rebbe, educating fellow Jewish people and instilling 
+                        them with Jewish enthusiasm. Rabbi Buganim also tirelessly works to provide 
+                        financial aid and other help to impoverished families in Israel's North.
+                    </p>
+
+                    <p>
+                        מוסדות "יעקב וגיטל" הוקמו לפני עשרים וחמש שנים על ידי הרב משה בוגנים שליט"א. 
+                        הרב בוגנים נולד בחיפה, שירת בצה"ל וכיום מתגורר בצפת. כחסיד חב"ד, הוא הולך בדרכו 
+                        של הרבי, מחנך יהודים ומחדיר בהם התלהבות יהודית. הרב בוגנים פועל ללא לאות כדי 
+                        לספק סיוע כלכלי ועזרה למשפחות מעוטות יכולת בצפון הארץ.
+                    </p>
                 </div>
 
                 <h3>רשימת הפעילויות</h3>
@@ -39,25 +64,67 @@
                     <li>ביקורים בבתי חולים</li>
                     <li>תוכנית ביקורי בית</li>
                     <li>חלוקת סלי מזון</li>
-                    <li>הפצת תפילין ומבצע תפילין לחיילי צה"ל</li>
+                    <li>הפצת תפילין לחיילי צה"ל</li>
                     <li>חלוקת תחליפי חלב לתינוקות</li>
                     <li>הבאת שמחה לעם ישראל</li>
                 </ul>
             </div>
 
-            <div class="about-image">
-                <img src="home/home.jpg" alt="הרב בוגנים" class="clickable">
+            <!-- גלריית תמונות -->
+            <div class="gallery">
+                <div class="card">
+                    <div class="card-media">
+                        <img src="home/home.jpg" class="clickable" alt="הרב בוגנים">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-media">
+                        <img src="images_about/about1.jpeg" class="clickable" alt="תמונה">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-media">
+                        <img src="images_about/about2.jpeg" class="clickable" alt="תמונה">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-media">
+                        <img src="images_about/about3.jpeg" class="clickable" alt="תמונה">
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-media">
+                        <img src="images_about/about4.jpeg" class="clickable" alt="תמונה">
+                    </div>
+                </div>
             </div>
+
         </div>
     </main>
 
+    <!-- לייטבוקס -->
     <div id="lightbox" class="lightbox" onclick="this.style.display='none'">
         <span class="close-btn">&times;</span>
         <img id="full-img" src="" alt="מסך מלא">
     </div>
 
+    <!-- JS -->
     <script>
-        // פונקציית Lightbox
+        function toggleMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('active');
+        }
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('nav-links').classList.remove('active');
+            });
+        });
+
         document.querySelectorAll('.clickable').forEach(img => {
             img.addEventListener('click', () => {
                 const lightbox = document.getElementById('lightbox');
@@ -67,29 +134,6 @@
             });
         });
     </script>
-   <script>
-    // פונקציית פתיחה/סגירה של התפריט
-    function toggleMenu() {
-        const navLinks = document.getElementById('nav-links');
-        navLinks.classList.toggle('active');
-    }
 
-    // סגירת התפריט אוטומטית כשלוחצים על קישור
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            document.getElementById('nav-links').classList.remove('active');
-        });
-    });
-
-    // פונקציית Lightbox
-    document.querySelectorAll('.clickable').forEach(img => {
-        img.addEventListener('click', () => {
-            const lightbox = document.getElementById('lightbox');
-            const fullImg = document.getElementById('full-img');
-            fullImg.src = img.src;
-            lightbox.style.display = 'flex';
-        });
-    });
-</script>
 </body>
 </html>
